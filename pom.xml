@@ -145,7 +145,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>test</scope>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -199,6 +199,18 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>postgres</id>
+            <properties>
+    <spring.profiles.active>postgres</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>h2</id>
+            <properties>
+    <spring.profiles.active>h2</spring.profiles.active>
+            </properties>
         </profile>
     </profiles>
 </project>
